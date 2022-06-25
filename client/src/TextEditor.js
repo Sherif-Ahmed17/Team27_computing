@@ -35,3 +35,50 @@ const TOOLBAR_OPTIONS = [
     ["clean"],
 
   ]
+
+  export default function TextEditor() {
+
+    const { id: documentId } = useParams()
+  
+    // eslint-disable-next-line
+    const [socket, setSocket] = useState()
+  
+    // eslint-disable-next-line
+    const [quill, setQuill] = useState()
+  
+    
+  
+    useEffect(() => {
+  
+      const s = io(process.env.REACT_APP_SERVER)
+  
+      setSocket(s)
+  
+      return () => {
+  
+          s.disconnect()
+  
+      }
+    }, [])
+  
+  
+  const wrapperRef = useCallback((wrapper) => { 
+  
+      if (wrapper === null) return
+  
+      wrapperRef.innerHTML = ""
+  
+      const editor = document.createElement("div")
+  
+      wrapper.append(editor)
+  
+      const q = new Quill(editor, { theme: 'snow' , modules: {toolbar: TOOLBAR_OPTIONS}}) 
+  
+      q.disable()
+      q.setText("Loading...")
+      setQuill(q)
+  
+  }, [])
+  
+    return <div className="container" ref={wrapperRef}></div>
+  }
