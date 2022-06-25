@@ -3,6 +3,7 @@
 ### 1- Follow this commands of the client side and the server side:
 
 ___________Client Side Commands___________
+
 1- create-react-app client 
 
 2- cd client
@@ -58,4 +59,4 @@ ___________Server Side Commands___________
 
 _____________________________________________________________
 
-### 2- Follow the step found in the deployment file.
+### 2- Follow the steps found in the deployment file.
