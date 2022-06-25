@@ -90,25 +90,45 @@ const TOOLBAR_OPTIONS = [
     
       }, [socket, quill])
 
+      useEffect(() => {
 
+        if (socket == null || quill == null) return
     
-  const wrapperRef = useCallback((wrapper) => { 
+        const handler =  (delta, oldDelta, source) => {
+    
+            if (source !== 'user') return
+    
+            socket.emit("send-changes", delta)
+    
+        }
+    
+        quill.on('text-change', handler)
+    
+        return () => {
+    
+            quill.off('text-change', handler)
+        }
+    
+      }, [socket, quill])
+
   
-      if (wrapper === null) return
-  
-      wrapperRef.innerHTML = ""
-  
-      const editor = document.createElement("div")
-  
-      wrapper.append(editor)
-  
-      const q = new Quill(editor, { theme: 'snow' , modules: {toolbar: TOOLBAR_OPTIONS}}) 
-  
-      q.disable()
-      q.setText("Loading...")
-      setQuill(q)
-  
-  }, [])
+    const wrapperRef = useCallback((wrapper) => { 
+    
+        if (wrapper === null) return
+    
+        wrapperRef.innerHTML = ""
+    
+        const editor = document.createElement("div")
+    
+        wrapper.append(editor)
+    
+        const q = new Quill(editor, { theme: 'snow' , modules: {toolbar: TOOLBAR_OPTIONS}}) 
+    
+        q.disable()
+        q.setText("Loading...")
+        setQuill(q)
+    
+    }, [])
   
     return <div className="container" ref={wrapperRef}></div>
   }
