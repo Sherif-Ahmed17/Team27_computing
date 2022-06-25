@@ -60,8 +60,38 @@ const TOOLBAR_OPTIONS = [
   
       }
     }, [])
-  
-  
+
+    useEffect(() => {
+
+        if (socket == null || quill == null) return
+    
+        socket.once("load-document", document => {
+            quill.setContents(document)
+            quill.enable()
+        })
+    
+        socket.emit("get-document", documentId)
+    
+      }, [socket, quill, documentId])
+    
+    
+      useEffect(() => {
+        if (socket == null || quill == null) return
+    
+        const interval = setInterval(() => {
+    
+            socket.emit("save-document", quill.getContents())
+    
+        }, SAVE_INTERVAL_MS)
+    
+        return () => {
+            clearInterval(interval)
+        }
+    
+      }, [socket, quill])
+
+
+    
   const wrapperRef = useCallback((wrapper) => { 
   
       if (wrapper === null) return
