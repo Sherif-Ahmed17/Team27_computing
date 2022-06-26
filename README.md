@@ -20,9 +20,7 @@ ___________Client Side Commands___________
 
 8- npm i uuid 
 
-9- or you can just do these two commands (cd client -> npm install) and ignore the above steps
-
-10- npm start (if you want to run locally)
+9- then follow deployment steps
 ___________________________________________________________________________________________________________________
 
 ___________Server Side Commands___________
@@ -57,7 +55,23 @@ ___________Server Side Commands___________
 
 15- heroku features:enable http-session-affinity 
 
-16- npm run devStart (if you want to run locally)
+16- then follow deployment steps
+
+___________________________________________________________________________________________________________________
+
+___________TO RUN LOCALLY___________
+1) In the TextEditor, change this line as shown in the image
+![image](https://user-images.githubusercontent.com/70483585/175819873-e2da4ff6-d4b0-4bc8-a009-bb64fdcd99ac.png)
+
+3) In the server.js, change this line as shown in the image
+![image](https://user-images.githubusercontent.com/70483585/175819854-9152c219-8bb4-426b-b08e-8c6d1f06c83e.png)
+
+5) In package.json in the server side, change these lines
+![image](https://user-images.githubusercontent.com/70483585/175819916-8bb77f7b-ae85-4f32-a5ab-83b0c11c6351.png)
+
+7) In terminal 1, write these commands: cd server -> npm run devStart
+
+9) In terminal 2, write these commands: cd client -> npm start
 ___________________________________________________________________________________________________________________
 
 ### 2- Follow the steps found in the deployment file
