@@ -22,7 +22,7 @@ ___________Client Side Commands___________
 
 9- or you can just do these two commands (cd client -> npm install) and ignore the above steps
 
-10- npm start
+10- npm start (if you want to run locally)
 ___________________________________________________________________________________________________________________
 
 ___________Server Side Commands___________
@@ -51,14 +51,13 @@ ___________Server Side Commands___________
 
 12- or you can just do these two commands (cd server -> npm install) and ignore the above steps
 
-12- heroku login
+13- heroku login
 
-13- heroku create
+14- heroku create
 
-14- heroku features:enable http-session-affinity 
+15- heroku features:enable http-session-affinity 
 
-15- npm run devStart
-
+16- npm run devStart (if you want to run locally)
 ___________________________________________________________________________________________________________________
 
 ### 2- Follow the steps found in the deployment file
