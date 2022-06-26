@@ -8,19 +8,19 @@ ___________Client Side Commands___________
 
 2- cd client
 
-3- npm install
+3- npm i quill
 
-4- npm i quill
+4- npm i socket.io-client
 
-5- npm i socket.io-client
+5- npm i react-router 
 
-6- npm i react-router 
+6- npm i react-router-dom 
 
-7- npm i react-router-dom 
+7- npm i 
 
-8- npm i 
+8- npm i uuid 
 
-9- npm i uuid 
+9- or you can just do these two commands (cd client -> npm install) and ignore the above steps
 
 10- npm start
 ___________________________________________________________________________________________________________________
@@ -48,6 +48,8 @@ ___________Server Side Commands___________
 10- npm i http 
 
 11- npm i express http
+
+12- or you can just do these two commands (cd server -> npm install) and ignore the above steps
 
 12- heroku login
 
