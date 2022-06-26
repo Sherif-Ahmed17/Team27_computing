@@ -59,7 +59,8 @@ ___________Server Side Commands___________
 
 ___________________________________________________________________________________________________________________
 
-### 2- Follow the steps found in the deployment file.
+### 2- Follow the steps found in the deployment file
 [Deployment File](https://github.com/Sherif-Ahmed17/Team27_computing/blob/master/Deployment%20steps.pdf)
 ___________________________________________________________________________________________________________________
-
+### 3- Take a look at the demo video
+[Demo Video](https://www.youtube.com/watch?v=XHlI97AOp-Y)
